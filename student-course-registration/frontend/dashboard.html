@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-body">
+
+    <nav class="navbar">
+        <div class="nav-brand">CourseReg</div>
+        <div class="nav-user">
+            <span id="studentNameDisplay">Welcome, Student</span>
+            <button id="logoutBtn" class="outline-btn">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="dashboard-header">
+            <h1>Dashboard</h1>
+        </header>
+
+        <div class="dashboard-grid">
+            
+            <!-- Available Courses Section -->
+            <section class="card">
+                <h2>Available Courses</h2>
+                <div class="course-list" id="availableCourses">
+                    <div class="loader">Loading courses...</div>
+                    <!-- Dynamically populated via JS -->
+                </div>
+            </section>
+
+            <!-- My Enrollments Section -->
+            <section class="card">
+                <h2>My Enrollments</h2>
+                <div class="course-list" id="myEnrollments">
+                    <div class="loader">Loading enrollments...</div>
+                    <!-- Dynamically populated via JS -->
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
