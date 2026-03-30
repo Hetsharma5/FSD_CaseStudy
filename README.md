@@ -15,7 +15,6 @@ This is a full-stack web app I built for my FSD practical. It lets students crea
    Open a terminal in the `backend` folder and run:
    ```bash
    npm install
-   node seedCourses.js # (Optional) This adds some dummy courses to the DB to test with
    npm start
    ```
    The backend should now be running on port 5000.
