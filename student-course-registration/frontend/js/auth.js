@@ -15,22 +15,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginError = document.getElementById('loginError');
     const registerError = document.getElementById('registerError');
 
-    // Tab Switching
-    loginTab.addEventListener('click', () => {
-        loginTab.classList.add('active');
-        registerTab.classList.remove('active');
+    const switchToRegister = document.getElementById('switchToRegister');
+    const switchToLogin = document.getElementById('switchToLogin');
+    const formTitle = document.getElementById('formTitle');
+
+    // Tab Switching via Links
+    function showLoginForm(e) {
+        if(e) e.preventDefault();
         loginForm.classList.add('active');
         registerForm.classList.remove('active');
+        formTitle.textContent = 'Log In';
         loginError.textContent = '';
-    });
+    }
 
-    registerTab.addEventListener('click', () => {
-        registerTab.classList.add('active');
-        loginTab.classList.remove('active');
+    function showRegisterForm(e) {
+        if(e) e.preventDefault();
         registerForm.classList.add('active');
         loginForm.classList.remove('active');
+        formTitle.textContent = 'Registration';
         registerError.textContent = '';
-    });
+    }
+
+    switchToRegister.addEventListener('click', showRegisterForm);
+    switchToLogin.addEventListener('click', showLoginForm);
+
+    // Initial state based on DOM active classes
+    if (registerForm.classList.contains('active')) {
+        formTitle.textContent = 'Registration';
+    } else {
+        formTitle.textContent = 'Log In';
+    }
 
     // Login Submission
     loginForm.addEventListener('submit', async (e) => {

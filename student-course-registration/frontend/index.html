@@ -5,51 +5,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Course Registration</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="auth-body">
+
+    <!-- Navbar matching the reference image -->
+    <!-- <nav class="auth-navbar">
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Services</a>
+        </div>
+        <button class="nav-login-btn">Log In</button>
+    </nav> -->
 
     <div class="auth-container">
-        <div class="auth-box">
-            <div class="tabs">
-                <button class="tab-btn active" id="loginTab">Login</button>
-                <button class="tab-btn" id="registerTab">Register</button>
+        <div class="auth-box glass-panel">
+            <button class="close-btn">&times;</button>
+
+            <!-- We will use a dynamically changing header instead of visible tabs to match mockup -->
+            <h2 id="formTitle">Registration</h2>
+
+            <!-- Hidden tabs logic for compatibility with existing JS -->
+            <div class="tabs" style="display: none;">
+                <button class="tab-btn active" id="registerTab">Reg</button>
+                <button class="tab-btn" id="loginTab">Log</button>
             </div>
 
             <!-- Login Form -->
-            <form id="loginForm" class="auth-form active">
-                <h2>Welcome Back</h2>
+            <form id="loginForm" class="auth-form">
                 <div id="loginError" class="error-message"></div>
                 <div class="form-group">
                     <label for="loginEmail">Email</label>
-                    <input type="email" id="loginEmail" required placeholder="student@example.com">
+                    <input type="email" id="loginEmail" required placeholder="studentName@college.edu">
                 </div>
                 <div class="form-group">
                     <label for="loginPassword">Password</label>
-                    <input type="password" id="loginPassword" required placeholder="••••••••">
+                    <input type="password" id="loginPassword" required placeholder="*********">
                 </div>
-                <button type="submit" class="primary-btn">Log In</button>
+                <!-- <div class="form-options">
+                    <label class="remember-me"><input type="checkbox"> Remember me</label>
+                    <a href="#" class="forgot-pwd">Forgot Password</a>
+                </div> -->
+                <button type="submit" class="glass-btn">Log In</button>
+                <p class="switch-form-text">Don't have any account? <a href="#" id="switchToRegister">Register</a></p>
             </form>
 
             <!-- Register Form -->
-            <form id="registerForm" class="auth-form">
-                <h2>Create Account</h2>
+            <form id="registerForm" class="auth-form active">
                 <div id="registerError" class="error-message"></div>
+                <!-- Adding Name since it was in our schema, though the mockup only shows two fields. 
+                     We will keep it consistent with our backend. -->
                 <div class="form-group">
                     <label for="registerName">Full Name</label>
-                    <input type="text" id="registerName" required placeholder="John Doe">
+                    <input type="text" id="registerName" required placeholder="Name">
                 </div>
                 <div class="form-group">
                     <label for="registerEmail">Email</label>
-                    <input type="email" id="registerEmail" required placeholder="student@example.com">
+                    <input type="email" id="registerEmail" required placeholder="studentName@college.edu">
                 </div>
                 <div class="form-group">
                     <label for="registerPassword">Password</label>
-                    <input type="password" id="registerPassword" required placeholder="••••••••">
+                    <input type="password" id="registerPassword" required placeholder="*********">
                 </div>
-                <button type="submit" class="primary-btn">Sign Up</button>
+                <!-- <div class="form-options">
+                    <label class="remember-me"><input type="checkbox"> Remember me</label>
+                    <a href="#" class="forgot-pwd">Forgot Password</a>
+                </div> -->
+                <button type="submit" class="glass-btn">Register</button>
+                <p class="switch-form-text">Already have an account? <a href="#" id="switchToLogin">Log In</a></p>
             </form>
         </div>
     </div>
